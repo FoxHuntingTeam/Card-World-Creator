@@ -1,0 +1,152 @@
+/* Загальні налаштування для всіх віджетів */
+QWidget {
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #19232d;
+}
+
+/* Налаштування для QLabel зображень */
+QLabel {
+    background-color: transparent;  /* Робимо фон прозорим */
+}
+QLabel#draggableLabel {
+    font-family: "Horta";
+    font-size: 14px;
+    color: black;
+}
+/* Налаштування для кнопок */
+QPushButton {
+    background-color: #32414b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 5px;
+}
+
+QPushButton:hover {
+    background-color: #505f69;
+}
+
+/* Налаштування для меню бару */
+QMenuBar {
+    background-color: #32414b;
+    color: white;
+}
+
+QMenuBar::item {
+    background-color: #32414b;
+    color: white;
+}
+
+QMenuBar::item:selected {
+    background-color: #148cd2;
+}
+
+/* Налаштування для меню */
+QMenu {
+    background-color: #32414b;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+QMenu::item {
+    background-color: #32414b;
+    color: white;
+}
+
+QMenu::item:selected {
+    background-color: #148cd2;
+    color: white;
+}
+
+/* Налаштування для чекбоксів */
+QCheckBox {
+    spacing: 8px;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+}
+
+QCheckBox::indicator:unchecked {
+    image: url('unchecked.png'); /* шлях до вашого зображення */
+}
+
+QCheckBox::indicator:checked {
+    image: url('checked.png'); /* шлях до вашого зображення */
+}
+
+/* Налаштування для таблиці */
+QTableWidget {
+    background-color: #19232d;  /* Колір таблиці */
+    border: 1px solid #32414b;  /* Межі таблиці */
+    gridline-color: #32414b;
+    font-size: 14px;
+}
+
+/* Налаштування для заголовків стовбців */
+QHeaderView::section {
+    background-color: #32414b;  /* Колір елементів, де розташовані назви стовбців */
+    color: white;  /* Колір тексту назв стовбців */
+    padding: 4px;
+    border: 1px solid #32414b;  /* Межі назв стовбців */
+}
+
+QTableView::verticalHeader,
+QHeaderView::section {
+    border-right: 1px solid #32414b;  /* Колір ліній розділення */
+}
+
+QTableCornerButton::section {
+    background-color: #32414b; /* Колір пустого квадратика */
+}
+
+/* Налаштування для пустого квадратика в лівому верхньому куті таблиці */
+QTableView::corner {
+    background-color: #32414b; /* Колір пустого квадратика */
+}
+
+/* Налаштування для вкладок та бару вкладок */
+QTabWidget {
+    background-color: #32414b;  /* Колір вкладок */
+}
+
+QTabBar::tab {
+    background-color: #32414b;  /* Колір вкладок */
+    color: white;  /* Колір тексту вкладок */
+}
+
+QTabBar::tab:selected {
+    background-color: #505f69;  /* Колір вкладок при натисканні */
+}
+
+QTableView QFrame {
+    border: 1px solid #32414b; /* Зміна колір ліній на #32414b */
+}
+
+QTableView::item {
+    border: 1px solid #32414b; /* Зміна коліру ліній на #32414b */
+}
+
+/* Налаштування для чекбоксів в налаштуваннях */
+QCheckBox::indicator {
+    background-color: #11181e; /* Встановлення фону чекбоксів */
+    border: 1px solid #11181e; /* Встановлення границі чекбокса */
+}
+
+QCheckBox::indicator:checked {
+    background-color: #32414b;
+    border: 1px solid #32414b;
+    image: url('checked.png'); /* Шлях до зображення для вибраних галочок */
+}
+
+/* Для невибраних галочок */
+QCheckBox::indicator:unchecked {
+    image: url('unchecked.png'); /* Шлях до зображення для невибраних галочок */
+}
