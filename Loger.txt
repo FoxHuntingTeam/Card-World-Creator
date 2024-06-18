@@ -1,0 +1,7 @@
+2024-06-18 19:48:23,627 - MainWindow - ERROR - Exception occurred in update_value_options: CardCreationDialog.update_value_options() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "D:\Fox\Bots\WCreator\utils\decorators.py", line 12, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+TypeError: CardCreationDialog.update_value_options() takes 1 positional argument but 2 were given
+

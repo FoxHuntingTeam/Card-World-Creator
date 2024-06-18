@@ -2,8 +2,8 @@ import os
 import sys
 
 from PIL import Image
-from PyQt5 import QtWidgets, QtCore, QtGui, Qt
-from PyQt5.QtCore import QTimer
+from PyQt5 import QtWidgets, QtCore, QtGui
+from PyQt5.QtCore import QTimer, Qt
 from PyQt5.QtGui import QPixmap, QColor, QPainter, QFont
 from PyQt5.QtWidgets import QLabel, QTableWidget, QScrollArea, QTextEdit, QPushButton, QComboBox, QMessageBox, QDialog, \
     QVBoxLayout, QProgressBar, QFormLayout, QLineEdit, QTableWidgetItem, QFileDialog, QGraphicsDropShadowEffect
@@ -54,7 +54,7 @@ class CardCreationDialog(QDialog):
         self.setLayout(layout)
 
     @error_logger()
-    def update_value_options(self):
+    def update_value_options(self, none=None):
         card_type = self.type_input.currentText()
         self.value_input.clear()
 
@@ -70,7 +70,7 @@ class CardCreationDialog(QDialog):
             self.value_input.addItems(["3000", "4000", "5000", "6000", "7000", "8000", "9000"])
 
     @error_logger()
-    def submit(self):
+    def submit(self, none=None):
         name = str(self.name_input.text())
         description = str(self.description_input.text())
         card_type = str(self.type_input.currentText())
@@ -150,7 +150,7 @@ class NewProjectDialog(QDialog):
         self.update_options()
 
     @error_logger()
-    def update_options(self):
+    def update_options(self, none=None):
         for label in self.option_labels:
             self.layout.removeWidget(label)
             label.deleteLater()
@@ -183,14 +183,14 @@ class NewProjectDialog(QDialog):
             self.layout.insertRow(self.layout.rowCount() - 1, option_label, option_combo)
 
     @error_logger()
-    def check_input(self):
+    def check_input(self, none=None):
         if self.name_edit.text().strip():
             self.submit_button.setEnabled(True)
         else:
             self.submit_button.setEnabled(False)
 
     @error_logger()
-    def submit(self):
+    def submit(self, none=None):
         self.accept()
 
 class DraggableLabel(QtWidgets.QLabel):
@@ -493,7 +493,7 @@ class Ui_MainWindow(object):
         self.box_font_number.addItems(["Arial"]+[f for f in QtGui.QFontDatabase().families()])
         self.img_fone.setPixmap(QtGui.QPixmap("A.png"))
         self.img_frame.setPixmap(QtGui.QPixmap("B.png"))
-        self.widget_table.setHorizontalHeaderLabels(["Number", "Name", "Description", "Type", "Respect"])
+
         # Set text
         self.button_create_card.setText("Create Cards")  # Змінюємо текст кнопки
         self.button_create_files.setText("Create Files")  # Змінюємо текст кнопки
@@ -511,6 +511,7 @@ class Ui_MainWindow(object):
         self.widget_table.setColumnCount(5)
         self.scroll_area.setWidgetResizable(True)
         self.scroll_area.setWidget(self.widget_table)
+        self.widget_table.setHorizontalHeaderLabels(["Number", "Name", "Description", "Type", "Respect"])
         # Timers
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.update_table)
